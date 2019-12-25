@@ -1,5 +1,5 @@
 require('dotenv').config()
-const { Client, Attachment } = require('discord.js')
+const { Client } = require('discord.js')
 
 const client = new Client()
 
@@ -8,17 +8,31 @@ client.on('ready', () => {
 });
 
 client.on('message', message => {
-	if (message.content.startsWith('/mock')) {
-		const user = message.mentions.users.first()
-		let userLastMessage = user.lastMessage.content
-		let replaceMessage = userLastMessage.replace(/<.*>/g, '').replace('/mock ', '').trim().split('')
-		let randomize = replaceMessage.map((x) => {
-			return [randomCase(x)].join('')
-		})
-		message.channel.send(randomize.join(''))
+	if (message.content.startsWith('mock')) {
+    const user = message.mentions.users.first()
+    if (user === undefined) {
+      message.channel.send('Who are you trying to mention?')
+    }
+		else {
+      if (user.lastMessage === null) {
+        message.channel.send('Well, it\'s not really a message')
+      } else {
+        let hee = user.lastMessage.mentions.users[0]
+        if (user.lastMessage.mentions.users.exists('id', message.author.id)) {
+          message.channel.send('What? You want to mock the one who mocks you?')
+        } else {
+          let userLastMessage = user.lastMessage.content
+          let splitMessage = userLastMessage.split('')
+          let randomize = splitMessage.map((x) => {
+            return [randomCase(x)].join('')
+          })
+          message.channel.send(randomize.join(''))
+        }
+      }
+    }
 	}
 	if (message.type === 'GUILD_MEMBER_JOIN') {
-		message.channel.send('Njir ada furry invite gw ke sini')
+		message.channel.send('Whoa there\'s a furry who invited me here')
 	}
 });
 

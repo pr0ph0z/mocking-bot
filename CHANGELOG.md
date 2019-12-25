@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - .env file for environment variables
 - CHANGELOG.md
+- Safe checking message
 ### Changed
 - Login method that previously using hardcoded token, now uses environment
   variable
