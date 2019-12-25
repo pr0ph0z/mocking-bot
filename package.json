@@ -1,0 +1,28 @@
+{
+  "name": "mocking-bot",
+  "version": "1.0.0",
+  "description": "Bot for mocking people on Discord",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.5.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pr0ph0z/mocking-bot.git"
+  },
+  "keywords": [
+    "discord",
+    "javascript",
+    "mocking"
+  ],
+  "author": "Mohamad Radisha <pr0ph0z23@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pr0ph0z/mocking-bot/issues"
+  },
+  "homepage": "https://github.com/pr0ph0z/mocking-bot#readme"
+}
