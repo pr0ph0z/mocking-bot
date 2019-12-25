@@ -1,3 +1,4 @@
+require('dotenv').config()
 const { Client, Attachment } = require('discord.js')
 
 const client = new Client()
@@ -21,7 +22,7 @@ client.on('message', message => {
 	}
 });
 
-client.login('')
+client.login(process.env.DISCORD_TOKEN)
 
 function randomCase(char)
 {
